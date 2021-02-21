@@ -8,7 +8,7 @@ class MyBody extends StatefulWidget {
 }
 
 class MyBodyState extends State<MyBody> {
-  List<String> _array = [];
+  List<double> _array = [];
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +21,11 @@ class MyBodyState extends State<MyBody> {
 
       print('index $index');
       print('length ${_array.length}');
-      final int result = pow(2, index);
-      if (index >= _array.length) _array.addAll(['$result']
+      final double result = pow(2.0, index);
+      if (index >= _array.length) _array.addAll([result]
       );
 
-      return new ListTile(title: new Text(_array[index]));
+      return new ListTile(title: new Text(_array[index].toStringAsFixed(0)));
     });
   }
 }
