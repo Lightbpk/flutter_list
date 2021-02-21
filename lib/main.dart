@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class MyBody extends StatefulWidget {
@@ -19,8 +21,9 @@ class MyBodyState extends State<MyBody> {
 
       print('index $index');
       print('length ${_array.length}');
-
-      if (index >= _array.length) _array.addAll(['$index', '${index + 1}', '${index + 2}']);
+      final int result = pow(2, index);
+      if (index >= _array.length) _array.addAll(['$result']
+      );
 
       return new ListTile(title: new Text(_array[index]));
     });
